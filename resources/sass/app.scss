@@ -1,12 +1,11 @@
-
+@import "settings";
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
-@import 'variables';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// foundation
+@import "../../../node_modules/foundation-sites/scss/foundation";
 
 .navbar-laravel {
   background-color: #fff;
