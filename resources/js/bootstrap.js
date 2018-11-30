@@ -1,6 +1,4 @@
 
-window._ = require('lodash');
-
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
  * for JavaScript based Bootstrap features such as modals and tabs. This
@@ -8,10 +6,9 @@ window._ = require('lodash');
  */
 
 try {
-    window.Popper = require('popper.js').default;
     window.$ = window.jQuery = require('jquery');
-
-    require('bootstrap');
+    require('./../../../node_modules/foundation-sites/dist/js/foundation.min');
+    require('./../../../node_modules/foundation-sites/js/foundation.reveal');
 } catch (e) {}
 
 /**
@@ -19,8 +16,18 @@ try {
  * to our Laravel back-end. This library automatically handles sending the
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
+window.Vue = require('vue');
+require('vue-resource');
+
+import VueRouter from 'vue-router';
+Vue.use(VueRouter);
+
+import VueEvents from 'vue-events';
+Vue.use(VueEvents);
 
 window.axios = require('axios');
+
+
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -54,3 +61,16 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+import Vue from 'vue'
+Vue.directive('data-reveal',{
+    bind: function (el){
+        new Foundation.Reveal($(el), {
+            overlay: true,
+            animationIn: 'fade-in'
+        })
+    },
+    unbind: function (el){
+        $(el).foundation.destroy()
+    }
+});
