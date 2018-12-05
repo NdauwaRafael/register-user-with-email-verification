@@ -1,4 +1,25 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);/**
+@import url(https://fonts.googleapis.com/css?family=Nunito);* {
+  font-family: Roboto, sans-serif;
+}
+
+.vacuum_main {
+  margin: 0;
+  padding: 0;
+}
+
+.vacuum_main .vacuum_page_content {
+  background-color: #f8f9fd;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.vacuum_dashboard .md-app {
+  min-height: 100vh !important;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+/**
  * Foundation for Sites by ZURB
  * Version 6.4.4-rc1
  * foundation.zurb.com

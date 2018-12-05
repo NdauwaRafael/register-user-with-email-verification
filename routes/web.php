@@ -11,6 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::group(['namespace' => 'Dashboard'], function () {
+    Route::get('/', 'DashboardController@index');
 });
+
+Route::get('{vue_capture?}', function () {
+    return view('dashboard.index');
+})->where('vue_capture', '[\/\w\.-]*');
