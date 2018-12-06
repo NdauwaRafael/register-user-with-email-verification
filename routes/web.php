@@ -17,6 +17,7 @@
 
 Route::group(['namespace' => 'Dashboard'], function () {
     Route::get('/', 'DashboardController@index');
+    Route::get('/dashboard', 'DashboardController@dashboard');
 });
 //
 //Route::get('{vue_capture?}', function () {
@@ -28,3 +29,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('activate/{token}', 'Auth\RegisterController@activate')
     ->name('activate');
+
+
+//Route::get('/{vue_capture?}', function () {
+//    if (!\Illuminate\Support\Facades\Auth::user()) return redirect('/login');
+//    return view('layouts.home');
+//})->where('vue_capture', '[\/\w\.-]*');

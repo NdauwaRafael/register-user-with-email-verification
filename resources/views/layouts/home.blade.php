@@ -15,7 +15,6 @@
 <body>
 <div id="app" v-cloak class="vacuum_main">
 
-    {{--@if(A::check())--}}
         <main-body>
             <div v-if="$route.name">
                 <transition name="">
@@ -26,12 +25,6 @@
                 @yield('content')
             </div>
         </main-body>
-    {{--@else--}}
-        {{--<div class="">--}}
-            {{--@yield('content')--}}
-        {{--</div>--}}
-
-    {{--@endif--}}
 </div>
 
 <script language="JavaScript" type="text/javascript" src="/js/app.js"></script>
