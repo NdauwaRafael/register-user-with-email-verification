@@ -22,3 +22,7 @@ Route::group(['namespace' => 'Dashboard'], function () {
 Route::get('{vue_capture?}', function () {
     return view('dashboard.index');
 })->where('vue_capture', '[\/\w\.-]*');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
